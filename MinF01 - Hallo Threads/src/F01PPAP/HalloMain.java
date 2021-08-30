@@ -34,6 +34,7 @@ public class HalloMain {
 //			t.start();
 //		}
 
+		
 		for (int i = 0; i < 10; i++) {
 			final int x = i;
 			Thread t = new Thread() {
