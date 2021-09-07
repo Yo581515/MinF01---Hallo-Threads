@@ -28,30 +28,35 @@ public class HalloMain {
 		// #5
 //		Thread t = new Thread(() -> System.out.println("Hallo fra anonym Runnable"));
 
-//		for (int i = 0; i < 10; i++) {
-//			final int x = i;
-//			Thread t = new Thread(() -> System.out.println("Hallo fra anonym Runnable " + x));
-//			t.start();
-//		}
-
-		
 		for (int i = 0; i < 10; i++) {
 			final int x = i;
-			Thread t = new Thread() {
-				@Override
-				public void run() {
-					System.out.println("Hallo fra anonym Thread " + x);
-				}
-			};
+			Thread t = new Thread(() -> {
+				System.out.println("Hallo fra anonym Runnable " + x);
+				System.out.println("Hallo fra anonym Runnable 2" + x);
+			}
+			);
 			t.start();
+		}
+
+		
+//		for (int i = 0; i < 10; i++) {
+//			final int x = i;
+//			Thread t = new Thread() {
+//				@Override
+//				public void run() {
+//					System.out.println("Hallo fra anonym Thread " + x);
+//				}
+//			};
+//			t.start();
 //			t.run();
 
-		}
+		
 
 		System.out.println("Hallo fra Main");
 		Thread.sleep(8);
 		// System.out.println("Hallo fra Main 2");
 
+	
 	}
 
 }
